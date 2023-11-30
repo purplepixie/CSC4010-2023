@@ -26,9 +26,9 @@ public class Node
             System.out.println("Starting NetworkListner on port "+node.port);
             try {
                 DatagramSocket socket = new DatagramSocket(node.port);
-                byte[] receive = new byte[65535];
                 DatagramPacket packet;
                 while(true) {
+                    byte[] receive = new byte[65535];
                     packet = new DatagramPacket(receive, receive.length);
                     socket.receive(packet);
                     System.out.println("Network Rx");
